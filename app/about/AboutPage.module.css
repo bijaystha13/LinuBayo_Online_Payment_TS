@@ -1,0 +1,763 @@
+/* Global Styles */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: #0f172a;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 2rem 4rem;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.heroOrb1,
+.heroOrb2 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.3;
+  animation: float 15s infinite ease-in-out;
+  z-index: 0;
+}
+
+.heroOrb1 {
+  width: 600px;
+  height: 600px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  top: -10%;
+  right: -10%;
+}
+
+.heroOrb2 {
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+  bottom: -15%;
+  left: -10%;
+  animation-delay: 7s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(40px, -40px) scale(1.1);
+  }
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+}
+
+.heroTitle {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+.heroGraphic {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floatingCard {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: floatCard 6s ease-in-out infinite;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.floatingCard:nth-child(1) {
+  top: 20%;
+  left: 10%;
+}
+
+.floatingCard:nth-child(2) {
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.floatingCard:nth-child(3) {
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+@keyframes floatCard {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(5deg);
+  }
+}
+
+.cardIcon {
+  font-size: 3rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Mission Section */
+.mission {
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 6rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.missionContent {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.sectionTitle::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.missionText {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 3rem;
+  animation: fadeIn 1s ease-out 0.3s backwards;
+}
+
+/* Features Section */
+.features {
+  position: relative;
+  padding: 6rem 2rem;
+  background: #0f172a;
+}
+
+.features .sectionTitle {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 4rem;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featureCard {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: fadeInUp 0.8s ease-out;
+  animation-fill-mode: backwards;
+}
+
+.featureCard:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.featureCard:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.featureCard:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.featureCard:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.featureCard:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3);
+  border-color: rgba(102, 126, 234, 0.5);
+  background: rgba(102, 126, 234, 0.08);
+}
+
+.featureIcon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  animation: bounce 2s infinite;
+  filter: drop-shadow(0 4px 8px rgba(102, 126, 234, 0.3));
+}
+
+.featureCard:hover .featureIcon {
+  animation: none;
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.featureTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.featureDescription {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+/* Stats Section */
+.stats {
+  position: relative;
+  background: rgba(102, 126, 234, 0.05);
+  padding: 6rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.statCard {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  animation: fadeInUp 0.8s ease-out;
+  animation-fill-mode: backwards;
+}
+
+.statCard:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.statCard:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.statCard:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.statCard:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.statCard:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+  border-color: rgba(102, 126, 234, 0.4);
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.statNumber {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.statLabel {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 600;
+}
+
+/* Team Section */
+.team {
+  position: relative;
+  background: #0f172a;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.teamDescription {
+  max-width: 800px;
+  margin: 2rem auto 4rem;
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.8;
+  animation: fadeIn 1s ease-out 0.3s backwards;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.teamCard {
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.15),
+    rgba(118, 75, 162, 0.15)
+  );
+  backdrop-filter: blur(10px);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  color: #ffffff;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: fadeInUp 0.8s ease-out;
+  animation-fill-mode: backwards;
+}
+
+.teamCard:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.teamCard:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.teamCard:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.teamCard:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 25px 50px rgba(102, 126, 234, 0.3);
+  border-color: rgba(102, 126, 234, 0.5);
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.25),
+    rgba(118, 75, 162, 0.25)
+  );
+}
+
+.teamAvatar {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  filter: drop-shadow(0 4px 12px rgba(102, 126, 234, 0.4));
+}
+
+.teamCard:hover .teamAvatar {
+  animation: bounce 0.6s ease;
+}
+
+.teamName {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+}
+
+.teamRole {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.cta {
+  position: relative;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 6rem 2rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.ctaTitle {
+  position: relative;
+  z-index: 1;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  animation: fadeInUp 0.8s ease-out;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.ctaDescription {
+  position: relative;
+  z-index: 1;
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+.ctaButton {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  color: #667eea;
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 1.25rem 3rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1.2s ease-out 0.4s backwards;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ctaButton:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  background: #f7fafc;
+}
+
+.ctaButton::after {
+  content: "→";
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover::after {
+  transform: translateX(5px);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .heroTitle {
+    font-size: 3rem;
+  }
+
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+
+  .ctaTitle {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 4rem 1.5rem 3rem;
+    min-height: 80vh;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.25rem;
+  }
+
+  .heroOrb1,
+  .heroOrb2 {
+    width: 400px;
+    height: 400px;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .missionText {
+    font-size: 1.1rem;
+  }
+
+  .mission,
+  .features,
+  .stats,
+  .team {
+    padding: 4rem 1.5rem;
+  }
+
+  .featuresGrid,
+  .teamGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .floatingCard {
+    width: 80px;
+    height: 80px;
+  }
+
+  .cardIcon {
+    font-size: 2rem;
+  }
+
+  .cta {
+    padding: 4rem 1.5rem;
+  }
+
+  .ctaTitle {
+    font-size: 2rem;
+  }
+
+  .ctaDescription {
+    font-size: 1.25rem;
+  }
+
+  .ctaButton {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 3rem 1rem 2rem;
+  }
+
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .heroOrb1,
+  .heroOrb2 {
+    width: 300px;
+    height: 300px;
+  }
+
+  .floatingCard {
+    width: 60px;
+    height: 60px;
+  }
+
+  .cardIcon {
+    font-size: 1.5rem;
+  }
+
+  .mission,
+  .features,
+  .stats,
+  .team,
+  .cta {
+    padding: 3rem 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .missionText {
+    font-size: 1rem;
+  }
+
+  .featureCard,
+  .statCard,
+  .teamCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .featureIcon {
+    font-size: 3rem;
+  }
+
+  .statNumber {
+    font-size: 2.5rem;
+  }
+
+  .statLabel {
+    font-size: 1rem;
+  }
+
+  .teamAvatar {
+    font-size: 4rem;
+  }
+
+  .teamName {
+    font-size: 1.5rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaTitle {
+    font-size: 1.75rem;
+  }
+
+  .ctaDescription {
+    font-size: 1.1rem;
+  }
+
+  .ctaButton {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* Additional hover effects */
+@media (hover: hover) {
+  .featureCard,
+  .statCard,
+  .teamCard {
+    will-change: transform;
+  }
+
+  .ctaButton {
+    will-change: transform;
+  }
+}
+
+/* Print styles */
+@media print {
+  .heroOrb1,
+  .heroOrb2,
+  .floatingCard {
+    display: none;
+  }
+
+  .featureCard,
+  .statCard,
+  .teamCard {
+    break-inside: avoid;
+  }
+}
