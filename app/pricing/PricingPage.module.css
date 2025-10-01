@@ -1,4 +1,3 @@
-/* Global Styles */
 .pricingPage {
   min-height: 100vh;
   background: #0f172a;
@@ -6,7 +5,6 @@
   overflow-x: hidden;
 }
 
-/* Hero Section */
 .heroSection {
   position: relative;
   padding: 8rem 2rem 4rem;
@@ -143,7 +141,6 @@
   }
 }
 
-/* Billing Toggle */
 .billingToggle {
   display: flex;
   align-items: center;
@@ -223,7 +220,6 @@
   margin-left: 0.5rem;
 }
 
-/* Pricing Section */
 .pricingSection {
   padding: 4rem 2rem;
   position: relative;
@@ -445,7 +441,6 @@
   margin-top: 2px;
 }
 
-/* Comparison Section */
 .comparisonSection {
   padding: 4rem 2rem;
   background: rgba(255, 255, 255, 0.02);
@@ -494,7 +489,6 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* FAQ Section */
 .faqSection {
   padding: 6rem 2rem;
 }
@@ -575,7 +569,6 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* CTA Section */
 .ctaSection {
   padding: 6rem 2rem;
   background: linear-gradient(135deg, #667eea, #764ba2);
@@ -683,7 +676,6 @@
   margin: 0;
 }
 
-/* Responsive Design */
 @media (max-width: 1200px) {
   .pricingGrid {
     grid-template-columns: repeat(2, 1fr);
@@ -884,7 +876,6 @@
   }
 }
 
-/* Additional hover effects and animations */
 @media (hover: hover) {
   .pricingCard {
     will-change: transform;
@@ -895,7 +886,6 @@
   }
 }
 
-/* Print styles */
 @media print {
   .heroBackground,
   .heroOrb1,

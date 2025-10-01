@@ -33,11 +33,11 @@ const About: React.FC = () => {
         <div className={styles.missionContent}>
           <h2 className={styles.sectionTitle}>Our Mission</h2>
           <p className={styles.missionText}>
-            We're on a mission to democratize financial transactions, making it
-            easier for everyone to send, receive, and manage money without
-            barriers. Our platform combines cutting-edge technology with
-            user-friendly design to deliver a payment experience that's both
-            powerful and accessible.
+            We&apos;re on a mission to democratize financial transactions,
+            making it easier for everyone to send, receive, and manage money
+            without barriers. Our platform combines cutting-edge technology with
+            user-friendly design to deliver a payment experience that&apos;s
+            both powerful and accessible.
           </p>
         </div>
       </section>

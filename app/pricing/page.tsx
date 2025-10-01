@@ -246,7 +246,6 @@ const PricingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Pricing Cards Section */}
       <section className={styles.pricingSection}>
         <div className={styles.pricingGrid}>
           {pricingTiers.map((tier, index) => (
@@ -320,14 +319,13 @@ const PricingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Features Comparison Table */}
       <section className={styles.comparisonSection}>
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>
             Compare All <span className={styles.gradient}>Features</span>
           </h2>
           <p className={styles.sectionDescription}>
-            See exactly what's included in each plan
+            See exactly what&apos;s included in each plan
           </p>
         </div>
 
@@ -340,14 +338,13 @@ const PricingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
       <section className={styles.faqSection}>
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>
             Frequently Asked <span className={styles.gradient}>Questions</span>
           </h2>
           <p className={styles.sectionDescription}>
-            Got questions? We've got answers
+            Got questions? We&apos;ve got answers
           </p>
         </div>
 
@@ -377,7 +374,6 @@ const PricingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className={styles.ctaSection}>
         <div className={styles.ctaContent}>
           <Rocket className={styles.ctaIcon} />
