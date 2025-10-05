@@ -40,7 +40,12 @@ const PricingPage: React.FC = () => {
   const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">(
     "monthly"
   );
+
+  // const [selectedTier, setSelectedTier] = useState<number>(1);
+
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+  // const [selectedTier, setSelectedTier] = useState<number | null>(null);
+  const [selectedTier, setSelectedTier] = useState<number>(1);
 
   const pricingTiers: PricingTier[] = [
     {
@@ -84,7 +89,6 @@ const PricingPage: React.FC = () => {
         { text: "Spending insights", included: true },
         { text: "API access", included: false },
       ],
-      highlighted: true,
       badge: "Most Popular",
       buttonText: "Start Pro Trial",
       buttonStyle: "primary",
@@ -192,6 +196,10 @@ const PricingPage: React.FC = () => {
     return billingCycle === "yearly" ? "Save 20%" : "";
   };
 
+  const handleCardClick = (index: number) => {
+    setSelectedTier(index);
+  };
+
   return (
     <div className={styles.pricingPage}>
       {/* Hero Section */}
@@ -252,8 +260,9 @@ const PricingPage: React.FC = () => {
             <div
               key={index}
               className={`${styles.pricingCard} ${
-                tier.highlighted ? styles.highlighted : ""
+                selectedTier === index ? styles.highlighted : ""
               }`}
+              onClick={() => handleCardClick(index)}
             >
               {tier.badge && (
                 <div className={styles.pricingBadge}>
@@ -292,6 +301,7 @@ const PricingPage: React.FC = () => {
 
               <button
                 className={`${styles.cardButton} ${styles[tier.buttonStyle]}`}
+                onClick={(e) => e.stopPropagation()}
               >
                 {tier.buttonText}
                 <ArrowRight className={styles.buttonIcon} />

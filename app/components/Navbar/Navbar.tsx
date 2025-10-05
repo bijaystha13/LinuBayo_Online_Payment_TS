@@ -86,7 +86,7 @@ const Navbar: React.FC = () => {
   };
 
   const handleSignup = () => {
-    router.push("/login");
+    router.push("/signup");
     closeMobileMenu();
   };
 
